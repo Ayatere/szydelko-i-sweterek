@@ -1,23 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/NavBar.module.css";
-export default function NavBar({}) {
+import { AiOutlineMenu } from "react-icons/ai";
+
+export default function NavBar({ foxImageId = 1 }) {
+  const [navClass, setNavClass] = useState("scrolledUp");
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleScroll = () => {
+    if (lastScrollPosition < window.scrollY && window.scrollY > 50) {
+      setNavClass("scrolledDown");
+    } else {
+      setNavClass("scrolledUp");
+    }
+    setLastScrollPosition(window.scrollY);
+  };
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${styles[navClass]}`}>
       <Image
-        src={"/images/fox_" + (Math.floor(Math.random() * 4) + 1) + ".png"}
+        src={"/images/fox_" + foxImageId + ".png"}
         alt="lisek"
         height={50}
         width={50}
-        layout="intrinsic"
       ></Image>
+      <Link href="/">
+        <a>Szydełkowy lisek</a>
+      </Link>
       <ul className={styles.ul}>
-        <li className={styles.li}>
-          <Link href="/">
-            <a>Strona główna</a>
-          </Link>
-        </li>
         <li className={styles.li}>
           <Link href="/o-stronie">
             <a>O stronie</a>
@@ -29,6 +44,7 @@ export default function NavBar({}) {
           </Link>
         </li>
       </ul>
+      <AiOutlineMenu className={styles.menu}></AiOutlineMenu>
     </nav>
   );
 }
