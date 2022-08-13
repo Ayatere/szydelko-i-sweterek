@@ -1,11 +1,13 @@
 import type { NextPage } from "next";
 
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/MojePrace.module.css";
 import NavBar from "../components/nav-bar";
-import Attributions from "../components/attributions";
+import Footer from "../components/footer";
+import Image from "next/image";
 
 const Home: NextPage = () => {
+  const imagesId = [1, 2, 3];
   return (
     <div className={styles.container}>
       <Head>
@@ -15,13 +17,18 @@ const Home: NextPage = () => {
       </Head>
       <NavBar />
       <main className={styles.main}>
-        <h1 className={styles.title}>Tutaj znajdziesz moje prace</h1>
+        <h1 className="text-5xl font-bold">Tutaj znajdziesz moje prace</h1>
+        {imagesId.map((id) => (
+          <Image
+            src={"/images/szydelko_" + id + ".jpg"}
+            alt={"Szydelko " + id}
+            height={400}
+            width={400}
+            key={id}
+          ></Image>
+        ))}
       </main>
-      <footer className={styles.footer}>
-        Powered by NextJS
-        <br />
-        <Attributions></Attributions>
-      </footer>
+      <Footer></Footer>
     </div>
   );
 };
