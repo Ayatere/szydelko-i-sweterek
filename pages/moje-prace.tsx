@@ -16,16 +16,25 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <main className={styles.main}>
-        <h1 className="text-5xl font-bold">Tutaj znajdziesz moje prace</h1>
+      <main>
+        <h1 className="h-screen text-5xl font-bold snap-start flex justify-center items-center">
+          Tutaj znajdziesz moje prace
+        </h1>
         {imagesId.map((id) => (
-          <Image
-            src={"/images/szydelko_" + id + ".jpg"}
-            alt={"Szydelko " + id}
-            height={400}
-            width={400}
+          <div
+            className="h-screen w-screen snap-start flex justify-center items-center bg-orange-100"
             key={id}
-          ></Image>
+          >
+            <div>
+              <Image
+                src={"/images/szydelko_" + id + ".jpg"}
+                alt={"Szydelko " + id}
+                height={600}
+                width={600}
+                objectFit="contain"
+              ></Image>
+            </div>
+          </div>
         ))}
       </main>
       <Footer></Footer>
