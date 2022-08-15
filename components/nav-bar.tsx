@@ -22,23 +22,29 @@ export default function NavBar({ foxImageId = 1 }) {
     setLastScrollPosition(window.scrollY);
   };
   return (
-    <nav className={`${styles.nav} ${styles[navClass]}`}>
-      <Image
-        src={"/images/fox_" + foxImageId + ".png"}
-        alt="lisek"
-        height={50}
-        width={50}
-      ></Image>
+    // <nav className={`${styles.nav} ${styles[navClass]}`}>
+    <nav
+      className={`fixed z-50 w-screen px-12 py-4 flex items-center text-lg gap-8 transition  ${styles.nav} ${styles[navClass]}`}
+    >
+      <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-[0_0_25px_0_rgba(255,255,255,1)] ">
+        <Image
+          src={"/images/fox_" + foxImageId + ".png"}
+          alt="lisek"
+          height={50}
+          width={50}
+          objectFit="contain"
+        ></Image>
+      </div>
       <Link href="/">
         <a>Szydełkowy lisek</a>
       </Link>
-      <ul className={styles.ul}>
-        <li className={styles.li}>
+      <ul className="flex gap-12 list-none">
+        <li className="grow shrink-0">
           <Link href="/o-stronie">
             <a>O stronie</a>
           </Link>
         </li>
-        <li className={styles.li}>
+        <li className="grow shrink-0">
           <Link href="/moje-prace">
             <a>Moje prace</a>
           </Link>

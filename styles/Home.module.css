@@ -1,0 +1,13 @@
+.stars {
+  rotate: 0;
+  animation: rotate 360s infinite;
+  transform-origin: bottom;
+}
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

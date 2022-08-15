@@ -23,14 +23,18 @@ a {
 }
 
 html {
-  color-scheme: white;
-  scroll-snap-type: y mandatory;
+  color-scheme: black;
+  /* scroll-snap-type: y mandatory; */
+  /* perspective: 5px; */
+  /* overflow-x: hidden; */
 }
 
 body {
-  color: black;
-  background-color: lightgoldenrodyellow;
+  color: white;
+  background-color: rgb(6, 3, 36);
+  overflow-x: hidden;
 }
+
 main {
   min-height: 100vh;
   flex: 1;

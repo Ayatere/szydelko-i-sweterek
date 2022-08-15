@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="289.08041mm"
+   height="174.30806mm"
+   viewBox="0 0 289.08041 174.30806"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <filter
+       style="color-interpolation-filters:sRGB"
+       id="filter2294"
+       x="-0.054849777"
+       y="-0.072025709"
+       width="1.1096996"
+       height="1.1665595">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(255,255,255)"
+         result="flood"
+         id="feFlood2284" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2286" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="2"
+         result="blur"
+         id="feGaussianBlur2288" />
+      <feOffset
+         dx="0"
+         dy="1.5"
+         result="offset"
+         id="feOffset2290" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2292" />
+    </filter>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(117.15481,15.983605)">
+    <path
+       style="fill:#040218;fill-opacity:1;stroke-width:0.264583"
+       d="M -117.15482,158.32446 19.079224,-9.7397025 171.9256,156.9324 Z"
+       id="path1541" />
+    <path
+       style="fill:#ffffff;stroke-width:0.337292;filter:url(#filter2294)"
+       d="M 19.829561,-11.183604 -25.40218,45.033952 -5.5078446,55.459264 28.642635,49.278539 c 0,0 15.585461,-5.357595 16.926109,-5.853082 11.174869,-4.130104 16.540824,-7.437347 16.540824,-7.437347 z"
+       id="path1543-3" />
+  </g>
+</svg>
