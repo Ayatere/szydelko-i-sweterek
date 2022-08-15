@@ -1,6 +1,6 @@
 .stars {
   rotate: 0;
-  animation: rotate 360s infinite;
+  animation: rotate 30s linear infinite;
   transform-origin: bottom;
 }
 @keyframes rotate {

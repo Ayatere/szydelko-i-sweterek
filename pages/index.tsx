@@ -6,7 +6,6 @@ import NavBar from "../components/nav-bar";
 import Footer from "../components/footer";
 import Image from "next/image";
 import StarComponent from "../components/star";
-import { useEffect, useState } from "react";
 import { useParallax } from "react-scroll-parallax";
 
 type Star = {
@@ -19,7 +18,6 @@ type Star = {
 };
 
 const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
-  const starsParallax = useParallax({ speed: -20 }).ref;
   const mountainsParallax2 = useParallax({ speed: -2 }).ref;
   const mountainsParallax4 = useParallax({ speed: -4 }).ref;
   const mountainsParallax5 = useParallax({ speed: -5 }).ref;
@@ -35,33 +33,35 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
       <NavBar></NavBar>
       <main>
         <div
-          ref={starsParallax as React.RefObject<HTMLDivElement>}
+          className="absolute top-0 left-0 -z-10  h-screen w-screen overflow-hidden"
           id="stars"
-          className={
-            `absolute top-0 left-0 -z-10 h-screen w-screen transform-gpu ` +
-            styles.stars
-          }
         >
-          {stars.map((star, idx) => (
-            <StarComponent
-              top={star.top}
-              left={star.left}
-              height={star.height}
-              width={star.width}
-              blur={star.blur}
-              spread={star.spread}
-              key={idx}
-            ></StarComponent>
-          ))}
+          <div
+            id="starsRotation"
+            className={`h-screen w-screen transform-gpu ` + styles.stars}
+          >
+            {stars.map((star, idx) => (
+              <StarComponent
+                top={star.top}
+                left={star.left}
+                height={star.height}
+                width={star.width}
+                blur={star.blur}
+                spread={star.spread}
+                key={idx}
+              ></StarComponent>
+            ))}
+          </div>
         </div>
+
         <div
           id="mountains"
-          className="absolute top-0 left-0 z-30 h-screen w-screen "
+          className="absolute overflow-hidden top-0 left-0 z-30 h-screen w-screen "
         >
           <div
             ref={mountainsParallax2 as React.RefObject<HTMLDivElement>}
             id="mountain-1"
-            className="absolute h-1/2 w-1/2 -left-40 -bottom-5 z-8"
+            className="absolute h-1/2 w-1/2 -left-[20%] -bottom-[5%] z-8"
           >
             <Image
               src={"/images/path430.svg"}
@@ -73,7 +73,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           </div>
           <div
             id="mountain-2"
-            className="absolute h-1/2 w-1/2 -left-20 -bottom-5 z-10"
+            className="absolute h-1/2 w-1/2 -left-[10%] -bottom-[5%] z-10"
             ref={mountainsParallax4 as React.RefObject<HTMLDivElement>}
           >
             <Image
@@ -86,7 +86,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           </div>
           <div
             id="mountain-3"
-            className="absolute h-1/2 w-1/2 left-10 -bottom-5 z-8"
+            className="absolute h-1/2 w-1/2 left-[5%] -bottom-[5%] z-8"
             ref={mountainsParallax5 as React.RefObject<HTMLDivElement>}
           >
             <Image
@@ -99,7 +99,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           </div>
           <div
             id="mountain-4"
-            className="absolute h-1/2 w-1/2 right-0 -bottom-5"
+            className="absolute h-1/2 w-1/2 -right-[20%] -bottom-[5%]"
             ref={mountainsParallax5 as React.RefObject<HTMLDivElement>}
           >
             <Image
@@ -112,7 +112,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           </div>
           <div
             id="mountain-5"
-            className="absolute h-1/2 w-1/2 -right-20 -bottom-5"
+            className="absolute h-1/2 w-1/2 -right-[10%] -bottom-[5%]"
             ref={mountainsParallax4 as React.RefObject<HTMLDivElement>}
           >
             <Image
@@ -125,7 +125,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           </div>
           <div
             id="mountain-6"
-            className="absolute h-1/2 w-1/2 -right-40 -bottom-5"
+            className="absolute h-1/2 w-1/2 right-[5%] -bottom-[5%]"
             ref={mountainsParallax2 as React.RefObject<HTMLDivElement>}
           >
             <Image
@@ -174,8 +174,8 @@ Home.getInitialProps = async ({ req }) => {
   function generateStar(): Star {
     const size = Math.random() * 0.2 + 0.1;
     let star: Star = {
-      top: Math.random() * 200 - 100,
-      left: Math.random() * 200 - 100,
+      top: Math.random() * 300 - 100,
+      left: Math.random() * 300 - 100,
       height: size,
       width: size,
       blur: Math.random() * 3 + 9,

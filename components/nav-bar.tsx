@@ -38,7 +38,7 @@ export default function NavBar({ foxImageId = 1 }) {
       <Link href="/">
         <a>Szydełkowy lisek</a>
       </Link>
-      <ul className="flex gap-12 list-none">
+      <ul className={"flex gap-12 list-none " + styles.ul}>
         <li className="grow shrink-0">
           <Link href="/o-stronie">
             <a>O stronie</a>
