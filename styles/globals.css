@@ -24,7 +24,8 @@ a {
 
 html {
   color-scheme: black;
-  /* scroll-snap-type: y mandatory; */
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   /* perspective: 5px; */
   /* overflow-x: hidden; */
 }

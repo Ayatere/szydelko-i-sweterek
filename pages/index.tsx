@@ -22,6 +22,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
   const mountainsParallax4 = useParallax({ speed: -4 }).ref;
   const mountainsParallax5 = useParallax({ speed: -5 }).ref;
   const textParallax = useParallax({ speed: -50 }).ref;
+  const cloudsParralax = useParallax({ speed: -30 }).ref;
 
   return (
     <div className={styles.container}>
@@ -53,10 +54,27 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             ))}
           </div>
         </div>
-
+        <div
+          id="clouds"
+          className="absolute top-0 left-0 z-30 h-screen w-screen"
+        >
+          <div
+            ref={cloudsParralax as React.RefObject<HTMLDivElement>}
+            id="cloud-1"
+            className="absolute h-1/3 w-1/3 left-[5%] top-[15%] z-12"
+          >
+            <Image
+              src={"/images/path3701.svg"}
+              alt={"Chmura 1"}
+              layout="fill"
+              objectFit="contain"
+              objectPosition="bottom"
+            ></Image>
+          </div>
+        </div>
         <div
           id="mountains"
-          className="absolute overflow-hidden top-0 left-0 z-30 h-screen w-screen "
+          className="absolute overflow-hidden top-0 left-0 z-10 h-screen w-screen "
         >
           <div
             ref={mountainsParallax2 as React.RefObject<HTMLDivElement>}
@@ -137,11 +155,13 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             ></Image>
           </div>
         </div>
-        <div
-          ref={textParallax as React.RefObject<HTMLDivElement>}
-          className="snap-start h-screen flex items-center -z-10"
-        >
-          <h1 className="text-5xl font-bold">Witaj u Liska</h1>
+        <div className="snap-start h-screen flex items-center -z-10">
+          <h1
+            ref={textParallax as React.RefObject<HTMLDivElement>}
+            className="text-5xl font-bold"
+          >
+            Witaj u Liska
+          </h1>
         </div>
         <div className="snap-start h-screen flex items-center w-screen bg-[#040218]">
           <h1 className="text-5xl font-bold">Witaj u Liska</h1>

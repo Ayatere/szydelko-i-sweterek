@@ -1,23 +1,11 @@
-/* .nav.scrolledUp {
-  transform: translateY(0);
-}
-
-.nav.scrolledDown {
-  transform: translateY(-5rem);
-} */
-
 .menu {
   display: none;
 }
-@media screen and (max-width: 1000px) {
-  .nav {
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-  .ul {
-    display: none;
-  }
-  .menu {
-    display: block;
-  }
+
+.closed {
+  transform: translateX(0);
+}
+
+.open {
+  transform: translateX(-24rem);
 }
