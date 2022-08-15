@@ -35,7 +35,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
       <NavBar></NavBar>
       <main>
         <div
-          ref={starsParallax}
+          ref={starsParallax as React.RefObject<HTMLDivElement>}
           id="stars"
           className={
             `absolute top-0 left-0 -z-10 h-screen w-screen transform-gpu ` +
@@ -59,7 +59,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           className="absolute top-0 left-0 z-30 h-screen w-screen "
         >
           <div
-            ref={mountainsParallax2}
+            ref={mountainsParallax2 as React.RefObject<HTMLDivElement>}
             id="mountain-1"
             className="absolute h-1/2 w-1/2 -left-40 -bottom-5 z-8"
           >
@@ -74,7 +74,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           <div
             id="mountain-2"
             className="absolute h-1/2 w-1/2 -left-20 -bottom-5 z-10"
-            ref={mountainsParallax4}
+            ref={mountainsParallax4 as React.RefObject<HTMLDivElement>}
           >
             <Image
               src={"/images/path432.svg"}
@@ -87,7 +87,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           <div
             id="mountain-3"
             className="absolute h-1/2 w-1/2 left-10 -bottom-5 z-8"
-            ref={mountainsParallax5}
+            ref={mountainsParallax5 as React.RefObject<HTMLDivElement>}
           >
             <Image
               src={"/images/path434.svg"}
@@ -100,7 +100,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           <div
             id="mountain-4"
             className="absolute h-1/2 w-1/2 right-0 -bottom-5"
-            ref={mountainsParallax5}
+            ref={mountainsParallax5 as React.RefObject<HTMLDivElement>}
           >
             <Image
               src={"/images/path444.svg"}
@@ -113,7 +113,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           <div
             id="mountain-5"
             className="absolute h-1/2 w-1/2 -right-20 -bottom-5"
-            ref={mountainsParallax4}
+            ref={mountainsParallax4 as React.RefObject<HTMLDivElement>}
           >
             <Image
               src={"/images/path442.svg"}
@@ -126,7 +126,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           <div
             id="mountain-6"
             className="absolute h-1/2 w-1/2 -right-40 -bottom-5"
-            ref={mountainsParallax2}
+            ref={mountainsParallax2 as React.RefObject<HTMLDivElement>}
           >
             <Image
               src={"/images/path440.svg"}
@@ -138,7 +138,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
           </div>
         </div>
         <div
-          ref={textParallax}
+          ref={textParallax as React.RefObject<HTMLDivElement>}
           className="snap-start h-screen flex items-center -z-10"
         >
           <h1 className="text-5xl font-bold">Witaj u Liska</h1>
