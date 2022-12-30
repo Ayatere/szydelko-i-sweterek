@@ -82,7 +82,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             className="absolute h-1/2 w-1/2 -left-[20%] -bottom-[5%] z-8"
           >
             <Image
-              src={"/images/path430.svg"}
+              src={"/images/mountain_1.svg"}
               alt={"Góry 1"}
               layout="fill"
               objectFit="contain"
@@ -95,7 +95,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             ref={mountainsParallax4 as React.RefObject<HTMLDivElement>}
           >
             <Image
-              src={"/images/path432.svg"}
+              src={"/images/mountain_2.svg"}
               alt={"Góry 2"}
               layout="fill"
               objectFit="contain"
@@ -108,7 +108,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             ref={mountainsParallax5 as React.RefObject<HTMLDivElement>}
           >
             <Image
-              src={"/images/path434.svg"}
+              src={"/images/mountain_3.svg"}
               alt={"Góry 3"}
               layout="fill"
               objectFit="contain"
@@ -121,7 +121,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             ref={mountainsParallax5 as React.RefObject<HTMLDivElement>}
           >
             <Image
-              src={"/images/path444.svg"}
+              src={"/images/mountain_6.svg"}
               alt={"Góry 4"}
               layout="fill"
               objectFit="contain"
@@ -134,7 +134,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             ref={mountainsParallax4 as React.RefObject<HTMLDivElement>}
           >
             <Image
-              src={"/images/path442.svg"}
+              src={"/images/mountain_5.svg"}
               alt={"Góry 5"}
               layout="fill"
               objectFit="contain"
@@ -147,7 +147,7 @@ const Home: NextPage<{ stars: Star[] }> = ({ stars }) => {
             ref={mountainsParallax2 as React.RefObject<HTMLDivElement>}
           >
             <Image
-              src={"/images/path440.svg"}
+              src={"/images/mountain_4.svg"}
               alt={"Góry 6"}
               layout="fill"
               objectFit="contain"
